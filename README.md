@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adcelerate360 - Amazon Marketing Agency Website
+
+A modern, fully animated Next.js website inspired by BuyBox Experts with Adcelerate360 branding and content.
+
+## Features
+
+✨ **Fully Animated**
+- Smooth scroll animations using Framer Motion
+- Animated counters with react-countup
+- Interactive hover effects and transitions
+- Parallax background effects
+- Fade-in animations on scroll
+
+🎨 **Modern Design**
+- Gradient backgrounds and effects
+- Custom color schemes (Orange-Red gradient theme)
+- Responsive design for all devices
+- Clean and professional UI
+
+📊 **Comprehensive Sections**
+- **Hero Section** - Eye-catching hero with animated stats
+- **Services** - 6 service cards with hover animations
+- **Stats** - Animated counters showing business metrics
+- **Amazon Advertising** - Detailed advertising services showcase
+- **Listing Optimization** - Product listing optimization features
+- **Account Management** - Full-service management offerings
+- **Testimonials** - Client success stories with ratings
+- **Footer** - Complete footer with contact info and links
+
+## Tech Stack
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Advanced animations
+- **React Intersection Observer** - Scroll-based animations
+- **React CountUp** - Animated number counters
+- **Lucide React** - Beautiful icons
 
 ## Getting Started
 
-First, run the development server:
+The project is already set up and running!
+
+**Development Server:** http://localhost:3001
+
+### Running the Project
 
 ```bash
+cd ~/Desktop/projects/adcelerate360
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Building for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Animations & Effects
 
-## Learn More
+### Scroll Animations
+- Elements fade in and slide up when scrolling into view
+- Smooth transitions throughout
 
-To learn more about Next.js, take a look at the following resources:
+### Hover Effects
+- Cards lift up and scale on hover
+- Icons rotate 360° on hover
+- Gradient overlays appear on hover
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Background Animations
+- Floating gradient orbs with smooth movement
+- Parallax effects on hero section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ using Next.js and Tailwind CSS
+# adcelerate360-v1
