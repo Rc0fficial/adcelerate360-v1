@@ -7,7 +7,9 @@ import Stats from '@/components/Stats';
 import About from '@/components/About';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
-// import CaseStudies from '@/components/CaseStudies';
+import CaseStudies from '@/components/CaseStudies';
+import TrustedMarketplaces from '@/components/TrustedMarketplaces';
+import Tools from '@/components/Tools';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -23,7 +25,9 @@ export default function Home() {
       <Services />
       <Process />
       <WhyChooseUs />
-      {/* <CaseStudies /> */}
+      <TrustedMarketplaces />
+      <Tools />
+      <CaseStudies />
       <Testimonials />
       <FAQ />
       <Contact />
