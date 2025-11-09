@@ -5,14 +5,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Clock } fr
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border-t border-amber-500/20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(209, 152, 16, 0.3) 1px, transparent 0)`,
-          backgroundSize: '40px 40px',
-        }} />
-      </div>
+    <footer className="text-white relative overflow-hidden border-t border-amber-500/20">
 
       {/* Subtle gradient orb */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-amber-500/5 to-yellow-500/5 rounded-full blur-3xl" />

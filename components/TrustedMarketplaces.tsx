@@ -43,9 +43,10 @@ export default function TrustedMarketplaces() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 py-20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#006f9108_1px,transparent_1px),linear-gradient(to_bottom,#006f9108_1px,transparent_1px)] bg-[size:64px_64px]" />
+    <section className="relative overflow-hidden py-20">
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-teal-500/10 to-green-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}

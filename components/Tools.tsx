@@ -39,9 +39,10 @@ export default function Tools() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#d1981008_1px,transparent_1px),linear-gradient(to_bottom,#d1981008_1px,transparent_1px)] bg-[size:64px_64px]" />
+    <section className="relative overflow-hidden py-20">
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}

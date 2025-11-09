@@ -5,11 +5,12 @@ import { ArrowRight, Sparkles, Globe, Zap, Target } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const rotatingWords = [
-  'Amazon',
-  'Walmart',
-  'Target',
-  'eBay',
-  'Etsy',
+  'Amazon Services',
+  'Amazon Sales',
+  'Target Growth',
+  'Market Dominance',
+  'Walmart Revenue',
+  'Global Expansion',
 ];
 
 export default function Hero() {
@@ -23,28 +24,227 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0E27]" style={{ paddingTop: '6rem', paddingBottom: '4rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-      {/* Complex Background Pattern */}
-      <div className="absolute inset-0 z-0">
-        {/* Diagonal Lines Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px)`
-        }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '4rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
 
-        {/* Dot Grid */}
-        <div className="absolute inset-0 opacity-[0.15]" style={{
-          backgroundImage: 'radial-gradient(circle, rgba(209, 152, 16, 0.15) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} />
+      {/* Animated 3D Elements - Marketplace Logos */}
+      <div className="absolute inset-0 overflow-hidden z-[1]">
+        {/* Amazon Logo - Left Top */}
+        <motion.div
+          animate={{
+            y: [0, -30, 0],
+            rotate: [0, 5, 0],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-32 left-10 w-48 h-48 opacity-20"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/30 to-amber-500/20 rounded-3xl backdrop-blur-sm border border-orange-400/20"
+            style={{ boxShadow: '0 20px 60px rgba(255, 153, 0, 0.3)' }}>
+            <div className="text-6xl font-bold text-orange-400/80">a</div>
+            <div className="absolute bottom-8 left-6 right-6 h-2 bg-orange-400/60 rounded-full"
+              style={{ clipPath: 'polygon(0 50%, 100% 50%, 95% 100%, 5% 100%)' }} />
+          </div>
+        </motion.div>
 
-        {/* Noise Texture */}
-        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
-        }} />
-      </div>
+        {/* Walmart Logo - Left Bottom */}
+        <motion.div
+          animate={{
+            y: [0, 40, 0],
+            rotate: [0, -5, 0],
+            scale: [1, 1.08, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-40 left-16 w-44 h-44 opacity-18"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-2xl backdrop-blur-sm border border-blue-400/20"
+            style={{ boxShadow: '0 15px 50px rgba(0, 112, 210, 0.3)' }}>
+            <div className="relative w-20 h-20">
+              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-2">
+                <div className="bg-cyan-400/70 rounded-sm transform rotate-45"></div>
+                <div className="bg-cyan-400/70 rounded-sm transform rotate-45"></div>
+                <div className="bg-cyan-400/70 rounded-sm transform rotate-45"></div>
+                <div className="bg-cyan-400/70 rounded-sm transform rotate-45"></div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-      {/* Animated Gradient Orbs - More Subtle */}
-      <div className="absolute inset-0 overflow-hidden z-0">
+        {/* Target Logo - Right Top */}
+        <motion.div
+          animate={{
+            y: [0, -35, 0],
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute top-24 right-12 w-52 h-52 opacity-18"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-red-500/30 to-pink-500/20 rounded-full backdrop-blur-sm border border-red-400/20"
+            style={{ boxShadow: '0 20px 60px rgba(220, 38, 38, 0.3)' }}>
+            <div className="w-32 h-32 rounded-full border-8 border-red-400/80 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full border-8 border-red-400/80 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-red-400/80"></div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* eBay Logo - Right Bottom */}
+        <motion.div
+          animate={{
+            y: [0, 45, 0],
+            rotate: [0, -3, 0],
+            scale: [1, 1.06, 1],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-32 right-20 w-46 h-46 opacity-16"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-500/30 to-amber-500/20 rounded-2xl backdrop-blur-sm border border-yellow-400/20"
+            style={{ boxShadow: '0 18px 55px rgba(234, 179, 8, 0.3)' }}>
+            <div className="flex gap-1 text-4xl font-bold">
+              <span className="text-red-400/80">e</span>
+              <span className="text-blue-400/80">B</span>
+              <span className="text-yellow-400/80">a</span>
+              <span className="text-green-400/80">y</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Shopify Logo - Left Middle */}
+        <motion.div
+          animate={{
+            y: [0, -25, 0],
+            x: [0, 15, 0],
+            rotate: [0, 8, 0],
+          }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-1/2 left-[5%] w-40 h-40 opacity-15"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/30 to-emerald-500/20 rounded-2xl backdrop-blur-sm border border-green-400/20"
+            style={{ boxShadow: '0 15px 45px rgba(34, 197, 94, 0.3)' }}>
+            <div className="text-5xl font-bold text-green-400/80">S</div>
+          </div>
+        </motion.div>
+
+        {/* Etsy Logo - Right Middle */}
+        <motion.div
+          animate={{
+            y: [0, 35, 0],
+            x: [0, -15, 0],
+            rotate: [0, -8, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-1/2 right-[8%] w-38 h-38 opacity-14"
+        >
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-600/30 to-amber-600/20 rounded-full backdrop-blur-sm border border-orange-400/20"
+            style={{ boxShadow: '0 14px 40px rgba(234, 88, 12, 0.3)' }}>
+            <div className="text-4xl font-bold text-orange-400/80 italic">E</div>
+          </div>
+        </motion.div>
+
+        {/* Animated Rings */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute top-1/3 right-[20%] w-48 h-48 opacity-15"
+          style={{
+            border: '2px solid rgba(209, 152, 16, 0.3)',
+            borderRadius: '50%',
+            boxShadow: 'inset 0 0 40px rgba(209, 152, 16, 0.1), 0 0 40px rgba(209, 152, 16, 0.1)',
+          }}
+        />
+
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute bottom-1/4 right-[25%] w-40 h-40 opacity-15"
+          style={{
+            border: '2px solid rgba(6, 182, 212, 0.3)',
+            borderRadius: '50%',
+            boxShadow: 'inset 0 0 30px rgba(6, 182, 212, 0.1), 0 0 30px rgba(6, 182, 212, 0.1)',
+          }}
+        />
+
+        {/* Floating Spheres */}
+        <motion.div
+          animate={{
+            y: [0, -50, 0],
+            x: [0, 30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-1/4 left-[15%] w-20 h-20 opacity-25"
+          style={{
+            background: 'radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.4), rgba(209, 152, 16, 0.1))',
+            borderRadius: '50%',
+            boxShadow: '0 0 60px rgba(209, 152, 16, 0.3)',
+            filter: 'blur(1px)',
+          }}
+        />
+
+        <motion.div
+          animate={{
+            y: [0, 40, 0],
+            x: [0, -20, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-1/3 right-[12%] w-28 h-28 opacity-25"
+          style={{
+            background: 'radial-gradient(circle at 30% 30%, rgba(14, 165, 233, 0.4), rgba(6, 182, 212, 0.1))',
+            borderRadius: '50%',
+            boxShadow: '0 0 50px rgba(6, 182, 212, 0.3)',
+            filter: 'blur(1px)',
+          }}
+        />
+
+        {/* Animated Gradient Orbs */}
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -62,6 +262,7 @@ export default function Hero() {
             filter: 'blur(60px)',
           }}
         />
+
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -80,24 +281,34 @@ export default function Hero() {
           }}
         />
 
-        {/* Additional Accent Orb */}
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 35,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full opacity-10"
-          style={{
-            background: 'radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%)',
-            filter: 'blur(50px)',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
+        {/* Particle-like Small Orbs */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, -100, 0],
+              x: [0, Math.sin(i) * 50, 0],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 15 + i * 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.5,
+            }}
+            className="absolute w-3 h-3 rounded-full"
+            style={{
+              top: `${20 + i * 10}%`,
+              left: `${10 + i * 8}%`,
+              background: i % 2 === 0
+                ? 'radial-gradient(circle, rgba(209, 152, 16, 0.6), transparent)'
+                : 'radial-gradient(circle, rgba(6, 182, 212, 0.6), transparent)',
+              boxShadow: i % 2 === 0
+                ? '0 0 20px rgba(209, 152, 16, 0.4)'
+                : '0 0 20px rgba(6, 182, 212, 0.4)',
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full" style={{ maxWidth: '80rem', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
@@ -113,7 +324,7 @@ export default function Hero() {
               <div className="inline-flex items-center backdrop-blur-xl border border-amber-400/30 shadow-2xl relative overflow-hidden" style={{ gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', fontSize: '0.875rem', background: 'rgba(217, 119, 6, 0.1)' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 animate-shimmer" />
                 <Sparkles className="w-4 h-4 text-amber-400 relative z-10" style={{ filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.5))' }} />
-                <span className="font-semibold text-amber-50 relative z-10">Full-Service E-Commerce Solutions</span>
+                <span className="font-semibold text-amber-50 relative z-10">E-Commerce Growth Experts</span>
               </div>
             </motion.div>
 
@@ -125,8 +336,9 @@ export default function Hero() {
               className="font-bold leading-[1.1] tracking-tight"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }}
             >
-              <span className="text-slate-100">Strategic Growth for </span>
-              <span style={{ display: 'inline-block', minHeight: '1.1em', position: 'relative', whiteSpace: 'nowrap' }}>
+              <span className="text-slate-100">Accelerate Your </span>
+              <br />
+              <span style={{ display: 'inline-block', minWidth: '100%', height: '1.1em', position: 'relative' }}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWordIndex}
@@ -134,15 +346,12 @@ export default function Hero() {
                     animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                     exit={{ y: -20, opacity: 0, filter: 'blur(8px)' }}
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="text-gradient text-glow-gold inline-block"
+                    className="text-gradient text-glow-gold inline-block absolute left-0 top-0"
+                    style={{ whiteSpace: 'nowrap' }}
                   >
                     {rotatingWords[currentWordIndex]}
                   </motion.span>
                 </AnimatePresence>
-              </span>
-              {' '}
-              <span className="text-gradient-teal">
-                & Global Marketplaces
               </span>
             </motion.h1>
 
@@ -154,7 +363,7 @@ export default function Hero() {
               className="text-slate-300 leading-relaxed max-w-xl"
               style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', lineHeight: '1.7' }}
             >
-              AI-powered PPC, advanced SEO, and expert brand consultancy across US, EU, UK, and GCC markets. Your dedicated growth partner for marketplace dominance.
+              Transform your marketplace presence with data-driven strategies, AI-powered PPC campaigns, and expert optimization across Amazon, Walmart, Target, and beyond. We combine cutting-edge technology with proven expertise to deliver measurable growth and maximize your ROI across US, EU, UK, and GCC markets.
             </motion.p>
 
             {/* CTA Buttons */}

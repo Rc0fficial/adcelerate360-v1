@@ -50,9 +50,10 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#d1981008_1px,transparent_1px),linear-gradient(to_bottom,#d1981008_1px,transparent_1px)] bg-[size:96px_96px]" />
+    <section id="case-studies" className="relative overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto" style={{ maxWidth: '80rem', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
         {/* Section Header */}

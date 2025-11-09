@@ -87,9 +87,10 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#d1981008_1px,transparent_1px),linear-gradient(to_bottom,#d1981008_1px,transparent_1px)] bg-[size:64px_64px]" />
+    <section id="faq" className="relative overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-5xl mx-auto" style={{ maxWidth: '64rem', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
         {/* Section Header */}

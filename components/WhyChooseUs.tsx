@@ -51,8 +51,6 @@ export default function WhyChooseUs() {
 
   return (
     <section id="why-choose-us" className="relative overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#d1981010_1px,transparent_1px),linear-gradient(to_bottom,#d1981010_1px,transparent_1px)] bg-[size:32px_32px] z-0" />
 
       {/* Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden opacity-20 z-0">
