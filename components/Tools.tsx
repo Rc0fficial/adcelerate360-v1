@@ -147,8 +147,8 @@ export default function Tools() {
                   <span className="text-gradient">Advanced Technology Stack</span>
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  Our team combines expertise with the industry's most powerful tools to optimize your campaigns,
-                  analyze market trends, and maximize your ROI. We invest in premium software so you don't have to.
+                  Our team combines expertise with the industry&apos;s most powerful tools to optimize your campaigns,
+                  analyze market trends, and maximize your ROI. We invest in premium software so you don&apos;t have to.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">

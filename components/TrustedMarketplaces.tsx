@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
 import { ShoppingCart, Star } from 'lucide-react';
 
@@ -65,7 +65,7 @@ export default function TrustedMarketplaces() {
             <span className="text-gradient-teal">Major Marketplaces</span>
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            We deliver exceptional results across the world's leading e-commerce platforms
+            We deliver exceptional results across the world&apos;s leading e-commerce platforms
           </p>
         </motion.div>
 
