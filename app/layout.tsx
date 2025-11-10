@@ -22,6 +22,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Force hardware acceleration for all animations */
+            * {
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+              -webkit-perspective: 1000;
+              perspective: 1000;
+            }
+          `
+        }} />
+      </head>
       <body className={`${dmSans.variable} antialiased`}>
         {children}
       </body>

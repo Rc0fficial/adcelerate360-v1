@@ -1,14 +1,41 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Star } from 'lucide-react';
 
 export default function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    revenue: '',
+    service: 'AI-Powered PPC',
+    message: '',
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    // Here you would send data to your backend
+    console.log('Form submitted:', formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const contactInfo = [
     {
@@ -133,95 +160,214 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="grid sm:grid-cols-2" style={{ gap: '1.5rem' }}>
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-slate-800/50 border border-amber-500/20 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 transition-colors"
-                    style={{ padding: '12px 16px', borderRadius: '12px' }}
-                    placeholder="John Doe"
-                  />
+            {submitted ? (
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-green-500/40 rounded-3xl p-12 text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-100 mb-4">
+                  Message Received! 🎉
+                </h3>
+                <p className="text-lg text-slate-300 mb-6">
+                  Thank you for reaching out, <span className="font-semibold text-green-400">{formData.name}</span>!
+                </p>
+                <p className="text-slate-400 mb-8">
+                  Our team will review your message and get back to you within 24 hours at{' '}
+                  <span className="font-semibold text-cyan-400">{formData.email}</span>
+                </p>
+                <div className="flex items-center justify-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-sm text-slate-400">
+                  In the meantime, check out our{' '}
+                  <a href="#case-studies" className="text-amber-400 hover:text-amber-300 underline">
+                    case studies
+                  </a>
+                  {' '}to see what we can achieve together.
+                </p>
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-amber-500/30 rounded-3xl p-8">
+                {/* Trust Badge */}
+                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-6 h-6 text-green-400" />
+                    <div>
+                      <p className="font-semibold text-slate-100 text-sm">Average Response Time: 2 Hours</p>
+                      <p className="text-xs text-slate-400">Get expert advice from our team fast</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full bg-slate-800/50 border border-amber-500/20 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 transition-colors"
-                    style={{ padding: '12px 16px', borderRadius: '12px' }}
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <div className="grid sm:grid-cols-2" style={{ gap: '1.5rem' }}>
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-slate-200 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                        style={{ padding: '12px 16px', borderRadius: '12px' }}
+                        placeholder="John Smith"
+                      />
+                    </div>
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full bg-slate-800/50 border border-amber-500/20 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 transition-colors"
-                  style={{ padding: '12px 16px', borderRadius: '12px' }}
-                  placeholder="Your Company"
-                />
-              </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-slate-200 mb-2">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                        style={{ padding: '12px 16px', borderRadius: '12px' }}
+                        placeholder="john@company.com"
+                      />
+                    </div>
+                  </div>
 
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-slate-300 mb-2">
-                  Service Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full bg-slate-800/50 border border-amber-500/20 text-slate-100 focus:outline-none focus:border-amber-500/50 transition-colors"
-                  style={{ padding: '12px 16px', borderRadius: '12px' }}
-                >
-                  <option>AI-Powered PPC</option>
-                  <option>E-Commerce SEO</option>
-                  <option>Brand Strategy</option>
-                  <option>Cross-Border Expansion</option>
-                  <option>White-Label Solutions</option>
-                  <option>Full Marketplace Management</option>
-                </select>
-              </div>
+                  <div className="grid sm:grid-cols-2" style={{ gap: '1.5rem' }}>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-semibold text-slate-200 mb-2">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        required
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                        style={{ padding: '12px 16px', borderRadius: '12px' }}
+                        placeholder="Your Company Inc."
+                      />
+                    </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full bg-slate-800/50 border border-amber-500/20 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
-                  style={{ padding: '12px 16px', borderRadius: '12px' }}
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-slate-200 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                        style={{ padding: '12px 16px', borderRadius: '12px' }}
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </div>
+                  </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-lg shadow-xl glow-gold transition-all flex items-center justify-center gap-2"
-                style={{ padding: '16px 32px', borderRadius: '9999px' }}
-              >
-                Send Message
-                <Send className="w-5 h-5" />
-              </motion.button>
-            </form>
+                  <div>
+                    <label htmlFor="revenue" className="block text-sm font-semibold text-slate-200 mb-2">
+                      Current Monthly Revenue *
+                    </label>
+                    <select
+                      id="revenue"
+                      name="revenue"
+                      required
+                      value={formData.revenue}
+                      onChange={handleChange}
+                      className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                      style={{ padding: '12px 16px', borderRadius: '12px' }}
+                    >
+                      <option value="">Select revenue range</option>
+                      <option value="0-10k">$0 - $10,000</option>
+                      <option value="10k-50k">$10,000 - $50,000</option>
+                      <option value="50k-100k">$50,000 - $100,000</option>
+                      <option value="100k-500k">$100,000 - $500,000</option>
+                      <option value="500k+">$500,000+</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-semibold text-slate-200 mb-2">
+                      Primary Interest *
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      required
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+                      style={{ padding: '12px 16px', borderRadius: '12px' }}
+                    >
+                      <option>AI-Powered PPC</option>
+                      <option>E-Commerce SEO</option>
+                      <option>Brand Strategy</option>
+                      <option>Cross-Border Expansion</option>
+                      <option>White-Label Solutions</option>
+                      <option>Full Marketplace Management</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-slate-200 mb-2">
+                      Tell Us About Your Goals
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full bg-slate-900/60 border border-slate-700/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all resize-none"
+                      style={{ padding: '12px 16px', borderRadius: '12px' }}
+                      placeholder="What are your biggest challenges? What results are you looking to achieve?"
+                    ></textarea>
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-lg shadow-xl glow-gold transition-all flex items-center justify-center gap-2"
+                    style={{ padding: '16px 32px', borderRadius: '9999px' }}
+                  >
+                    Get Free Consultation
+                    <Send className="w-5 h-5" />
+                  </motion.button>
+
+                  <p className="text-xs text-slate-500 text-center">
+                    🔒 Your information is secure. We never share your data.
+                  </p>
+
+                  {/* Trust Elements */}
+                  <div className="pt-4 border-t border-slate-700/50">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-xl font-bold text-gradient mb-1">2hrs</div>
+                        <div className="text-xs text-slate-400">Avg Response</div>
+                      </div>
+                      <div>
+                        <div className="text-xl font-bold text-gradient-teal mb-1">500+</div>
+                        <div className="text-xs text-slate-400">Happy Clients</div>
+                      </div>
+                      <div>
+                        <div className="text-xl font-bold text-gradient mb-1">4.9★</div>
+                        <div className="text-xs text-slate-400">Client Rating</div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
