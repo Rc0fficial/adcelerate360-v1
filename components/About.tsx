@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Rocket, Target, Users, Zap } from 'lucide-react';
+import { Rocket, Target, Users, Zap, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -96,36 +97,80 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Feature Cards */}
+          {/* Right Content - Professional Image with Stats */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid sm:grid-cols-2"
-            style={{ gap: '1.5rem' }}
+            className="relative"
           >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group"
-              >
-                <div className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300" style={{ padding: '1.5rem', borderRadius: '1rem' }}>
-                  <div className="flex items-center justify-center bg-gradient-to-br from-cyan-500 to-teal-500 shadow-lg glow-teal" style={{ width: '3rem', height: '3rem', borderRadius: '0.75rem', marginBottom: '1rem' }}>
-                    <feature.icon className="w-6 h-6 text-slate-950" />
+            {/* Main Professional Image Card */}
+            <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden p-8 hover:border-cyan-500/40 transition-all duration-300 shadow-2xl">
+              {/* Professional Business Person Image */}
+              <div className="relative w-full h-96 sm:h-[500px] rounded-2xl overflow-hidden mb-6">
+                <Image
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop"
+                  alt="Professional E-Commerce Consultant"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+
+                {/* Floating Badge */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center">
+                        <Users className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-slate-100 font-bold text-lg">Expert Team</div>
+                        <div className="text-cyan-400 text-sm font-medium">Your Growth Partners</div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-slate-100 group-hover:text-gradient-teal transition-all" style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+
+              {/* Key Features List */}
+              <div className="space-y-3">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    className="flex items-start gap-3 bg-slate-900/40 border border-slate-700/30 rounded-lg p-3 hover:border-cyan-500/30 transition-all"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 flex items-center justify-center">
+                      <feature.icon className="w-4 h-4 text-cyan-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-slate-100 font-semibold text-sm mb-1">{feature.title}</h4>
+                      <p className="text-slate-400 text-xs leading-relaxed">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Floating Stats Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="absolute -bottom-6 -right-6 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-2xl p-6 shadow-2xl"
+            >
+              <div className="text-white">
+                <div className="flex items-center gap-2 mb-1">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="text-sm font-semibold">Proven Success</span>
+                </div>
+                <div className="text-3xl font-bold">10+ Years</div>
+                <div className="text-sm opacity-90">250+ Brands</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

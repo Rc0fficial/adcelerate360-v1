@@ -67,16 +67,16 @@ export default function ResultsDashboard() {
             <BarChart3 className="w-4 h-4 text-green-400" />
             <span className="text-sm font-semibold text-green-400">Real Performance Data</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="text-slate-100">See the </span>
             <span className="text-gradient">Numbers That Matter</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto text-center px-4">
             Real results from our Amazon seller dashboard. This is what data-driven optimization looks like.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Left: Dashboard Image with Overlay Metrics */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -85,8 +85,8 @@ export default function ResultsDashboard() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden p-6 hover:border-green-500/40 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
-              <div className="relative h-80 rounded-xl overflow-hidden mb-6">
+            <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden p-4 sm:p-6 hover:border-green-500/40 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-4 sm:mb-6">
                 <Image
                   src="/images/charts/dashboard-1.jpg"
                   alt="Amazon Dashboard Analytics"
@@ -117,9 +117,9 @@ export default function ResultsDashboard() {
               </div>
 
               {/* Growth Chart */}
-              <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-bold text-slate-100">6-Month Growth Trajectory</h3>
+              <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-100">6-Month Growth Trajectory</h3>
                   <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 px-3 py-1.5 rounded-full">
                     <TrendingUp className="w-3.5 h-3.5 text-green-400" />
                     <span className="text-xs font-semibold text-green-400">+150%</span>
@@ -157,8 +157,8 @@ export default function ResultsDashboard() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
-              <h3 className="text-2xl font-bold text-slate-100 mb-6">
+            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-4 sm:mb-6">
                 Live Performance Metrics
               </h3>
 
@@ -170,20 +170,20 @@ export default function ResultsDashboard() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-5 hover:border-green-500/40 hover:shadow-lg hover:shadow-green-500/5 transition-all duration-300"
+                    className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-3 sm:p-5 hover:border-green-500/40 hover:shadow-lg hover:shadow-green-500/5 transition-all duration-300"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${metric.color} flex items-center justify-center shadow-lg`}>
-                          <metric.icon className="w-6 h-6 text-white" />
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${metric.color} flex items-center justify-center shadow-lg flex-shrink-0`}>
+                          <metric.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                         <div>
-                          <div className="text-sm text-slate-400 mb-1">{metric.label}</div>
-                          <div className="text-2xl font-bold text-slate-100">{metric.value}</div>
+                          <div className="text-xs sm:text-sm text-slate-400 mb-0.5 sm:mb-1">{metric.label}</div>
+                          <div className="text-xl sm:text-2xl font-bold text-slate-100">{metric.value}</div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${metric.color} bg-clip-text text-transparent font-bold text-lg`}>
+                      <div className="text-left sm:text-right w-full sm:w-auto">
+                        <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${metric.color} bg-clip-text text-transparent font-bold text-base sm:text-lg`}>
                           <ArrowUpRight className="w-4 h-4" style={{ color: 'rgb(34, 197, 94)' }} />
                           {metric.change}
                         </div>
@@ -226,11 +226,11 @@ export default function ResultsDashboard() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12"
         >
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-slate-100 mb-4">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 px-4">
               Want to See Results Like These for Your Brand?
             </h3>
-            <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-4 sm:mb-6 px-4">
               Get a free Amazon performance audit and see exactly how we can grow your sales.
             </p>
             <motion.a

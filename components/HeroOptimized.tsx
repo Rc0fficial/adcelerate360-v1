@@ -15,6 +15,7 @@ const rotatingWords = [
 export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [barsAnimated, setBarsAnimated] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,6 +26,14 @@ export default function Hero() {
       }, 300);
     }, 2500);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // Trigger bar animations after page load
+    const timer = setTimeout(() => {
+      setBarsAnimated(true);
+    }, 600);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -199,9 +208,9 @@ export default function Hero() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
                   {[
-                    { platform: 'Amazon', growth: '+245%', color: 'from-amber-500 to-yellow-500' },
-                    { platform: 'Walmart', growth: '+189%', color: 'from-cyan-500 to-teal-500' },
-                    { platform: 'Target', growth: '+156%', color: 'from-purple-500 to-pink-500' },
+                    { platform: 'Amazon', growth: '+245%', color: 'from-amber-500 to-yellow-500', width: 85 },
+                    { platform: 'Walmart', growth: '+189%', color: 'from-cyan-500 to-teal-500', width: 72 },
+                    { platform: 'Target', growth: '+156%', color: 'from-purple-500 to-pink-500', width: 65 },
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -216,8 +225,12 @@ export default function Hero() {
                       </div>
                       <div className="w-full bg-slate-800 overflow-hidden" style={{ height: '0.375rem', borderRadius: '9999px' }}>
                         <div
-                          className={`h-full bg-gradient-to-r ${item.color}`}
-                          style={{ width: '85%' }}
+                          className={`h-full bg-gradient-to-r ${item.color} transition-all duration-1000 ease-out`}
+                          style={{
+                            width: barsAnimated ? `${item.width}%` : '0%',
+                            transitionDelay: `${i * 150}ms`,
+                            transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+                          }}
                         />
                       </div>
                     </div>

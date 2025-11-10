@@ -106,11 +106,11 @@ export default function FAQ() {
             <HelpCircle className="w-4 h-4 text-amber-400" />
             <span className="text-sm font-semibold text-amber-400">Got Questions?</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="text-slate-100">Frequently Asked </span>
             <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto text-center px-4">
             Everything you need to know about partnering with Adcelerate360. Can&apos;t find what you&apos;re looking for? Contact us directly.
           </p>
         </motion.div>
@@ -147,20 +147,21 @@ export default function FAQ() {
                       {/* Question */}
                       <button
                         onClick={() => toggleFAQ(categoryIndex, questionIndex)}
-                        className="w-full text-left flex items-start justify-between gap-6 group"
-                        style={{ padding: '1.75rem 2rem' }}
+                        className="w-full text-left flex items-start justify-between gap-3 sm:gap-6 group"
+                        style={{ padding: '1.25rem 1rem' }}
+                        className="sm:p-7"
                       >
-                        <span className="text-slate-100 font-semibold text-lg group-hover:text-amber-400 transition-colors leading-relaxed">
+                        <span className="text-slate-100 font-semibold text-base sm:text-lg group-hover:text-amber-400 transition-colors leading-relaxed">
                           {faq.question}
                         </span>
-                        <div className="flex-shrink-0 mt-1">
+                        <div className="flex-shrink-0 mt-0.5">
                           {isActive ? (
-                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center">
-                              <Minus className="w-5 h-5 text-amber-400" />
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center">
+                              <Minus className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
                             </div>
                           ) : (
-                            <div className="w-8 h-8 rounded-lg bg-slate-700/30 border border-slate-600/30 flex items-center justify-center group-hover:bg-amber-500/10 group-hover:border-amber-500/30 transition-all">
-                              <Plus className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors" />
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-700/30 border border-slate-600/30 flex items-center justify-center group-hover:bg-amber-500/10 group-hover:border-amber-500/30 transition-all">
+                              <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 group-hover:text-amber-400 transition-colors" />
                             </div>
                           )}
                         </div>
@@ -176,9 +177,9 @@ export default function FAQ() {
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                             className="overflow-hidden"
                           >
-                            <div style={{ paddingLeft: '2rem', paddingRight: '2rem', paddingBottom: '1.75rem' }}>
-                              <div className="border-t border-slate-700/50" style={{ paddingTop: '1.5rem' }}>
-                                <p className="text-slate-300 leading-relaxed text-base">{faq.answer}</p>
+                            <div className="px-4 sm:px-8 pb-5 sm:pb-7">
+                              <div className="border-t border-slate-700/50 pt-4 sm:pt-6">
+                                <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
                               </div>
                             </div>
                           </motion.div>
@@ -200,10 +201,10 @@ export default function FAQ() {
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ marginTop: '4rem' }}
         >
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl" style={{ padding: '2.5rem' }}>
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 lg:p-10">
             <div className="text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <h3 className="text-3xl font-bold text-slate-100" style={{ marginBottom: '1rem' }}>Still Have Questions?</h3>
-              <p className="text-slate-300 max-w-2xl mx-auto text-lg" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-100 px-4" style={{ marginBottom: '1rem' }}>Still Have Questions?</h3>
+              <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg px-4" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
                 Our team is here to help. Schedule a free consultation to discuss your specific needs and get personalized answers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -105,25 +105,24 @@ export default function Testimonials() {
             <Star className="w-4 h-4 text-amber-400" />
             <span className="text-sm font-semibold text-amber-400">Client Success Stories</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="text-slate-100">Trusted by </span>
             <span className="text-gradient">Industry Leaders</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto text-center px-4">
             Don&apos;t just take our word for it. See how we&apos;ve helped brands and agencies achieve marketplace dominance.
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2" style={{ gap: '2rem' }}>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300"
-              style={{ padding: '2.5rem' }}
+              className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 p-5 sm:p-7 lg:p-10"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -138,26 +137,26 @@ export default function Testimonials() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-slate-300 leading-relaxed relative z-10 text-base" style={{ marginBottom: '1.75rem', lineHeight: '1.8' }}>
+              <p className="text-slate-300 leading-relaxed relative z-10 text-sm sm:text-base" style={{ marginBottom: '1.5rem', lineHeight: '1.8' }}>
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
               {/* Results Badge */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-500/30 px-5 py-2.5 rounded-xl shadow-lg" style={{ marginBottom: '1.75rem' }}>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-500/30 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-lg mb-5 sm:mb-7">
                 <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-                <span className="text-sm font-bold text-amber-400 tracking-wide">{testimonial.results}</span>
+                <span className="text-xs sm:text-sm font-bold text-amber-400 tracking-wide">{testimonial.results}</span>
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center gap-4 pt-4 border-t border-slate-700/50">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-slate-950 font-bold text-lg">
+              <div className="flex items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-slate-700/50">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-slate-950 font-bold text-base sm:text-lg flex-shrink-0">
                   {testimonial.image}
                 </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-slate-100">{testimonial.name}</div>
-                  <div className="text-sm text-slate-400">{testimonial.role}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-slate-100 text-sm sm:text-base truncate">{testimonial.name}</div>
+                  <div className="text-xs sm:text-sm text-slate-400 truncate">{testimonial.role}</div>
                 </div>
-                <div className="text-xs text-cyan-400 font-medium bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                <div className="text-xs text-cyan-400 font-medium bg-cyan-500/10 px-2 sm:px-3 py-1 rounded-full border border-cyan-500/20 flex-shrink-0">
                   {testimonial.platform}
                 </div>
               </div>

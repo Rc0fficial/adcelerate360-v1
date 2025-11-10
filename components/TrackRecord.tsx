@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Users, Handshake, ThumbsUp, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 const stats = [
   {
@@ -104,7 +105,7 @@ export default function TrackRecord() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Team Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,21 +113,57 @@ export default function TrackRecord() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16"
         >
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-slate-100 mb-4">
-              Ready to Join Our Success Stories?
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-slate-100 mb-6 text-center">
+              Meet Our Leadership
             </h3>
-            <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
-              Let&apos;s leverage our proven expertise to accelerate your marketplace growth and achieve exceptional results together.
+            <p className="text-slate-300 text-center mb-8 max-w-2xl mx-auto">
+              Led by industry veterans with decades of experience in e-commerce, marketplace optimization, and digital marketing.
             </p>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold shadow-xl glow-gold transition-all px-8 py-3 rounded-full text-base"
-            >
-              Start Your Success Story
-            </motion.a>
+
+            <div className="max-w-md mx-auto mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="group"
+              >
+                <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 hover:border-amber-500/40 hover:shadow-xl hover:shadow-amber-500/5 smooth-transition">
+                  <div className="relative w-48 h-48 mx-auto mb-4 rounded-lg overflow-hidden">
+                    <Image
+                      src="/images/team/cofounder.jpeg"
+                      alt="Hammad Ali Nasir"
+                      fill
+                      className="object-cover group-hover:scale-110 smooth-transition"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                  </div>
+                  <h4 className="font-bold text-slate-100 text-center text-xl mb-2">Hammad Ali Nasir</h4>
+                  <p className="text-sm text-amber-400 text-center font-semibold mb-3">Co-Founder & CEO</p>
+                  <p className="text-sm text-slate-400 text-center leading-relaxed">
+                    Leading Adcelerate360 with over 10 years of experience in Amazon marketplace optimization and e-commerce growth strategies.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="text-center">
+              <h4 className="text-xl font-bold text-slate-100 mb-4">
+                Ready to Join Our Success Stories?
+              </h4>
+              <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto mb-6">
+                Let&apos;s leverage our proven expertise to accelerate your marketplace growth and achieve exceptional results together.
+              </p>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold shadow-xl glow-gold transition-all px-8 py-3 rounded-full text-base"
+              >
+                Start Your Success Story
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -69,11 +69,11 @@ export default function CaseStudies() {
             <Award className="w-4 h-4 text-amber-400" />
             <span className="text-sm font-semibold text-amber-400">Real Results, Real Growth</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="text-slate-100">Success Stories That </span>
             <span className="text-gradient">Define Excellence</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto text-center px-4">
             Data-backed case studies showcasing measurable impact across marketplaces and industries. Your success story could be next.
           </p>
         </motion.div>
@@ -93,15 +93,15 @@ export default function CaseStudies() {
                 {/* Gradient Accent Bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${study.gradient}`} />
 
-                <div style={{ padding: '2.5rem 3rem' }}>
-                  <div className="grid lg:grid-cols-12 gap-8">
+                <div style={{ padding: '1.5rem' }} className="sm:p-8 lg:px-12 lg:py-10">
+                  <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
                     {/* Left: Company Info */}
                     <div className="lg:col-span-4">
                       <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${study.gradient} text-slate-950 font-bold rounded-lg mb-4 text-xs shadow-lg uppercase tracking-wide`} style={{ padding: '0.5rem 0.875rem' }}>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                         Case Study
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-100 mb-2 leading-tight">{study.company}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-2 leading-tight">{study.company}</h3>
                       <div className="text-sm text-slate-400 mb-3 font-medium">{study.industry}</div>
                       <div className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-lg text-xs text-cyan-400 mb-6 shadow-lg" style={{ padding: '0.5rem 0.75rem' }}>
                         <ShoppingCart className="w-3.5 h-3.5" />
@@ -131,7 +131,7 @@ export default function CaseStudies() {
                     {/* Right: Results */}
                     <div className="lg:col-span-8">
                       {/* Results Grid */}
-                      <div className="grid grid-cols-3 gap-6 mb-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6">
                         {study.results.map((result, i) => (
                           <motion.div
                             key={i}
@@ -182,7 +182,7 @@ export default function CaseStudies() {
           style={{ marginTop: '3rem' }}
         >
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl" style={{ padding: '2.5rem 2rem' }}>
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-gradient mb-2">500+</div>
                 <div className="text-sm text-slate-400 font-medium">Brands Scaled</div>
@@ -213,10 +213,10 @@ export default function CaseStudies() {
         >
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl" style={{ padding: '2.5rem' }}>
             <div className="flex flex-col items-center justify-center text-center">
-              <h3 className="text-3xl font-bold text-slate-100" style={{ marginBottom: '1rem' }}>
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-100 px-4" style={{ marginBottom: '1rem' }}>
                 Want Results Like These for Your Brand?
               </h3>
-              <p className="text-slate-300 text-lg leading-relaxed max-w-2xl" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl px-4" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
                 Join hundreds of successful brands who&apos;ve transformed their marketplace performance. Let&apos;s write your success story together.
               </p>
               <motion.a

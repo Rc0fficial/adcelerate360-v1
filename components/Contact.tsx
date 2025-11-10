@@ -87,7 +87,7 @@ export default function Contact() {
             </span>
           </motion.div>
 
-          <h2 className="font-bold tracking-tight" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)' }}>
+          <h2 className="font-bold tracking-tight px-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)' }}>
             <span className="text-slate-100">Let&apos;s</span>{' '}
             <span className="text-gradient">Accelerate</span>
             <br />
@@ -146,7 +146,7 @@ export default function Contact() {
               className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-amber-500/20"
               style={{ padding: '2rem', borderRadius: '1rem' }}
             >
-              <h3 className="font-bold text-slate-100" style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Business Hours</h3>
+              <h3 className="font-bold text-slate-100 text-lg sm:text-xl" style={{ marginBottom: '1rem' }}>Business Hours</h3>
               <div className="text-slate-300" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                 <p className="text-sm text-slate-400">Available across US, EU, UK & GCC timezones</p>
@@ -189,7 +189,7 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-amber-500/30 rounded-3xl p-8">
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-amber-500/30 rounded-3xl p-4 sm:p-6 lg:p-8">
                 {/* Trust Badge */}
                 <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-4 mb-6">
                   <div className="flex items-center gap-3">
@@ -350,7 +350,7 @@ export default function Contact() {
 
                   {/* Trust Elements */}
                   <div className="pt-4 border-t border-slate-700/50">
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                       <div>
                         <div className="text-xl font-bold text-gradient mb-1">2hrs</div>
                         <div className="text-xs text-slate-400">Avg Response</div>
