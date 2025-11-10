@@ -14,7 +14,7 @@ const trustBadges = [
   {
     icon: Award,
     title: 'Top 1% Agency',
-    description: 'Ranked in Clutch.co\'s Top Agencies',
+    description: 'Ranked in Clutch.co&apos;s Top Agencies',
     color: 'from-amber-500 to-yellow-500',
   },
   {
@@ -151,7 +151,7 @@ export default function SocialProof() {
                     </div>
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed italic">
-                    "Revenue increased by 180% in just 6 months. The team's expertise in Amazon PPC is unmatched. Best investment we've made for our business."
+                    &ldquo;Revenue increased by 180% in just 6 months. The team&apos;s expertise in Amazon PPC is unmatched. Best investment we&apos;ve made for our business.&rdquo;
                   </p>
                 </div>
 
@@ -178,7 +178,7 @@ export default function SocialProof() {
                     </div>
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed italic">
-                    "They helped us expand to 5 EU countries seamlessly. Their compliance expertise saved us from costly mistakes. Highly recommend!"
+                    &ldquo;They helped us expand to 5 EU countries seamlessly. Their compliance expertise saved us from costly mistakes. Highly recommend!&rdquo;
                   </p>
                 </div>
 
@@ -205,7 +205,7 @@ export default function SocialProof() {
                     </div>
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed italic">
-                    "ROAS of 12.5x! Walmart and Target now make up 35% of our revenue. The multi-platform strategy was a game-changer."
+                    &ldquo;ROAS of 12.5x! Walmart and Target now make up 35% of our revenue. The multi-platform strategy was a game-changer.&rdquo;
                   </p>
                 </div>
               </div>

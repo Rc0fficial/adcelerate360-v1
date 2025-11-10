@@ -147,9 +147,8 @@ export default function FAQ() {
                       {/* Question */}
                       <button
                         onClick={() => toggleFAQ(categoryIndex, questionIndex)}
-                        className="w-full text-left flex items-start justify-between gap-3 sm:gap-6 group"
+                        className="w-full text-left flex items-start justify-between gap-3 sm:gap-6 group sm:p-7"
                         style={{ padding: '1.25rem 1rem' }}
-                        className="sm:p-7"
                       >
                         <span className="text-slate-100 font-semibold text-base sm:text-lg group-hover:text-amber-400 transition-colors leading-relaxed">
                           {faq.question}

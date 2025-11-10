@@ -55,7 +55,7 @@ export default function LeadMagnet() {
               Success! Check Your Email 📧
             </h2>
             <p className="text-lg text-slate-300 mb-6">
-              We've sent your free Amazon audit report to <span className="font-semibold text-green-400">{formData.email}</span>
+              We&apos;ve sent your free Amazon audit report to <span className="font-semibold text-green-400">{formData.email}</span>
             </p>
             <p className="text-slate-400">
               Our team will reach out within 24 hours to discuss your personalized growth strategy.
@@ -147,7 +147,7 @@ export default function LeadMagnet() {
                 <div>
                   <h4 className="font-bold text-slate-100 mb-2">No Obligations. 100% Free.</h4>
                   <p className="text-sm text-slate-300">
-                    Get actionable insights you can implement immediately, even if you don't work with us. That's how confident we are in our expertise.
+                    Get actionable insights you can implement immediately, even if you don&apos;t work with us. That&apos;s how confident we are in our expertise.
                   </p>
                 </div>
               </div>
