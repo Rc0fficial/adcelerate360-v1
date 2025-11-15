@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TrendingUp, DollarSign, Target, ShoppingCart, BarChart3, ArrowUpRight } from 'lucide-react';
-import Image from 'next/image';
+import { TrendingUp, DollarSign, Target, ShoppingCart, BarChart3, ArrowUpRight, Clock } from 'lucide-react';
+import { Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart, BarChart, Bar, ComposedChart } from 'recharts';
 
 const metrics = [
   {
@@ -36,17 +36,60 @@ const metrics = [
 ];
 
 const monthlyGrowth = [
-  { month: 'Jan', value: 40 },
-  { month: 'Feb', value: 52 },
-  { month: 'Mar', value: 65 },
-  { month: 'Apr', value: 78 },
-  { month: 'May', value: 88 },
-  { month: 'Jun', value: 100 },
+  { month: 'Jan', value: 40, sales: 125000 },
+  { month: 'Feb', value: 52, sales: 165000 },
+  { month: 'Mar', value: 65, sales: 205000 },
+  { month: 'Apr', value: 78, sales: 245000 },
+  { month: 'May', value: 88, sales: 278000 },
+  { month: 'Jun', value: 100, sales: 315000 },
 ];
 
-export default function ResultsDashboard() {
-  const maxValue = Math.max(...monthlyGrowth.map(m => m.value));
+const weeklyPerformance = [
+  { day: 'Mon', orders: 182, revenue: 8420 },
+  { day: 'Tue', orders: 195, revenue: 9150 },
+  { day: 'Wed', orders: 210, revenue: 9870 },
+  { day: 'Thu', orders: 225, revenue: 10500 },
+  { day: 'Fri', orders: 240, revenue: 11280 },
+  { day: 'Sat', orders: 198, revenue: 9240 },
+  { day: 'Sun', orders: 175, revenue: 8190 },
+];
 
+const performanceComparison = [
+  { month: 'Jan', revenue: 125, acos: 18.5 },
+  { month: 'Feb', revenue: 165, acos: 16.2 },
+  { month: 'Mar', revenue: 205, acos: 14.8 },
+  { month: 'Apr', revenue: 245, acos: 13.5 },
+  { month: 'May', revenue: 278, acos: 12.9 },
+  { month: 'Jun', revenue: 315, acos: 12.3 },
+];
+
+interface TooltipProps {
+  active?: boolean;
+  payload?: Array<{
+    name: string;
+    value: number;
+    color: string;
+  }>;
+  label?: string;
+}
+
+const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-900 border border-slate-700 rounded-lg p-3 shadow-xl">
+        <p className="text-slate-200 font-semibold mb-1">{label}</p>
+        {payload.map((entry, index: number) => (
+          <p key={index} className="text-sm" style={{ color: entry.color }}>
+            {entry.name === 'sales' ? '$' : ''}{entry.value.toLocaleString()}{entry.name === 'value' ? '%' : ''}
+          </p>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
+
+export default function ResultsDashboard() {
   return (
     <section className="relative overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
       {/* Decorative Gradient Orbs */}
@@ -86,12 +129,11 @@ export default function ResultsDashboard() {
             className="relative"
           >
             <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden p-4 sm:p-6 hover:border-green-500/40 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
-              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-4 sm:mb-6">
-                <Image
-                  src="/images/charts/dashboard-1.jpg"
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-4 sm:mb-6 bg-slate-950">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
                   alt="Amazon Dashboard Analytics"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
 
@@ -126,25 +168,40 @@ export default function ResultsDashboard() {
                   </div>
                 </div>
 
-                <div className="flex items-end justify-between gap-2 h-32">
-                  {monthlyGrowth.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ height: 0 }}
-                      whileInView={{ height: `${(item.value / maxValue) * 100}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="flex-1 flex flex-col items-center"
-                    >
-                      <div className="w-full bg-gradient-to-t from-green-600 to-emerald-500 rounded-t-lg relative group">
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900 border border-green-500/30 px-2 py-1 rounded text-xs text-green-400 whitespace-nowrap">
-                          {item.value}%
-                        </div>
-                      </div>
-                      <div className="text-xs text-slate-400 mt-2">{item.month}</div>
-                    </motion.div>
-                  ))}
-                </div>
+                <ResponsiveContainer width="100%" height={200}>
+                  <AreaChart data={monthlyGrowth} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#10b981" stopOpacity={0.4}/>
+                        <stop offset="95%" stopColor="#10b981" stopOpacity={0.05}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                    <XAxis
+                      dataKey="month"
+                      stroke="#94a3b8"
+                      style={{ fontSize: '12px' }}
+                      tick={{ fill: '#94a3b8' }}
+                    />
+                    <YAxis
+                      stroke="#94a3b8"
+                      style={{ fontSize: '12px' }}
+                      tick={{ fill: '#94a3b8' }}
+                      label={{ value: 'Growth %', angle: -90, position: 'insideLeft', fill: '#94a3b8', style: { fontSize: '12px' } }}
+                    />
+                    <Tooltip content={<CustomTooltip />} />
+                    <Area
+                      type="monotone"
+                      dataKey="value"
+                      stroke="#10b981"
+                      fillOpacity={1}
+                      fill="url(#colorValue)"
+                      strokeWidth={3}
+                      dot={{ fill: '#10b981', strokeWidth: 2, r: 4 }}
+                      activeDot={{ r: 6, strokeWidth: 2 }}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </motion.div>
@@ -215,6 +272,154 @@ export default function ResultsDashboard() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Additional Performance Charts */}
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 mt-8">
+          {/* Weekly Performance Chart */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6 hover:border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center shadow-lg">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-100">Last 7 Days Performance</h3>
+                  <p className="text-xs text-slate-400">Daily orders & revenue tracking</p>
+                </div>
+              </div>
+            </div>
+
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={weeklyPerformance} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorOrders" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#06b6d4" stopOpacity={0.3}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                <XAxis
+                  dataKey="day"
+                  stroke="#94a3b8"
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#94a3b8' }}
+                />
+                <YAxis
+                  stroke="#94a3b8"
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#94a3b8' }}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Bar
+                  dataKey="orders"
+                  fill="url(#colorOrders)"
+                  radius={[8, 8, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+
+            <div className="grid grid-cols-2 gap-3 mt-4">
+              <div className="bg-slate-900/60 border border-cyan-500/30 rounded-lg p-3">
+                <div className="text-xs text-slate-400 mb-1">Avg Daily Orders</div>
+                <div className="text-xl font-bold text-cyan-400">203</div>
+              </div>
+              <div className="bg-slate-900/60 border border-teal-500/30 rounded-lg p-3">
+                <div className="text-xs text-slate-400 mb-1">Avg Daily Revenue</div>
+                <div className="text-xl font-bold text-teal-400">$9,521</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Revenue vs ACOS Comparison */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6 hover:border-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
+                  <Target className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-100">Revenue vs ACOS</h3>
+                  <p className="text-xs text-slate-400">Efficiency optimization trend</p>
+                </div>
+              </div>
+            </div>
+
+            <ResponsiveContainer width="100%" height={240}>
+              <ComposedChart data={performanceComparison} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#a855f7" stopOpacity={0.4}/>
+                    <stop offset="95%" stopColor="#a855f7" stopOpacity={0.05}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
+                <XAxis
+                  dataKey="month"
+                  stroke="#94a3b8"
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#94a3b8' }}
+                />
+                <YAxis
+                  yAxisId="left"
+                  stroke="#94a3b8"
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#94a3b8' }}
+                  label={{ value: 'Revenue ($K)', angle: -90, position: 'insideLeft', fill: '#94a3b8', style: { fontSize: '12px' } }}
+                />
+                <YAxis
+                  yAxisId="right"
+                  orientation="right"
+                  stroke="#94a3b8"
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#94a3b8' }}
+                  label={{ value: 'ACOS (%)', angle: 90, position: 'insideRight', fill: '#94a3b8', style: { fontSize: '12px' } }}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Area
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="revenue"
+                  stroke="#a855f7"
+                  fillOpacity={1}
+                  fill="url(#colorRevenue)"
+                  strokeWidth={3}
+                />
+                <Line
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="acos"
+                  stroke="#ec4899"
+                  strokeWidth={3}
+                  dot={{ fill: '#ec4899', strokeWidth: 2, r: 4 }}
+                  activeDot={{ r: 6, strokeWidth: 2 }}
+                />
+              </ComposedChart>
+            </ResponsiveContainer>
+
+            <div className="grid grid-cols-2 gap-3 mt-4">
+              <div className="bg-slate-900/60 border border-purple-500/30 rounded-lg p-3">
+                <div className="text-xs text-slate-400 mb-1">Revenue Growth</div>
+                <div className="text-xl font-bold text-purple-400">+152%</div>
+              </div>
+              <div className="bg-slate-900/60 border border-pink-500/30 rounded-lg p-3">
+                <div className="text-xs text-slate-400 mb-1">ACOS Reduction</div>
+                <div className="text-xl font-bold text-pink-400">-33.5%</div>
+              </div>
+            </div>
           </motion.div>
         </div>
 

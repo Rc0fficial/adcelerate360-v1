@@ -2,15 +2,39 @@
 
 import { useRef } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
-import { Wrench, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 const tools = [
-  { name: 'Pacvue', color: 'from-blue-500 to-indigo-500' },
-  { name: 'Adbrew', color: 'from-purple-500 to-pink-500' },
-  { name: 'Helium 10', color: 'from-orange-500 to-red-500' },
-  { name: 'Intentwise', color: 'from-green-500 to-emerald-500' },
-  { name: 'Junglescout', color: 'from-teal-500 to-cyan-500' },
-  { name: 'Keepa', color: 'from-amber-500 to-yellow-500' },
+  {
+    name: 'Pacvue',
+    color: 'from-blue-500 to-indigo-500',
+    logo: 'https://cdn.worldvectorlogo.com/logos/pacvue.svg',
+  },
+  {
+    name: 'Adbrew',
+    color: 'from-purple-500 to-pink-500',
+    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/gajt4wpqqwvuy7gag19f',
+  },
+  {
+    name: 'Helium 10',
+    color: 'from-orange-500 to-red-500',
+    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1502321443/yvurzmqnhpejwmjxiyvr.png',
+  },
+  {
+    name: 'Intentwise',
+    color: 'from-green-500 to-emerald-500',
+    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/fgw9bx5h0yl68rjbqfrv',
+  },
+  {
+    name: 'Jungle Scout',
+    color: 'from-teal-500 to-cyan-500',
+    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1502321443/bj9lplsnuzlqrirfqwgx.png',
+  },
+  {
+    name: 'Keepa',
+    color: 'from-amber-500 to-yellow-500',
+    logo: 'https://keepa.com/favicon.ico',
+  },
 ];
 
 export default function Tools() {
@@ -109,10 +133,14 @@ export default function Tools() {
                     {/* Gradient Accent */}
                     <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${tool.color} rounded-t-2xl`} />
 
-                    {/* Icon */}
+                    {/* Logo */}
                     <div className="flex items-center justify-center mb-6">
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <Wrench className="w-10 h-10 text-white" />
+                      <div className="w-32 h-32 rounded-2xl bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 p-6">
+                        <img
+                          src={tool.logo}
+                          alt={`${tool.name} logo`}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
 

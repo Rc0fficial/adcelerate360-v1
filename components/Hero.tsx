@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, Globe, Zap, Target } from 'lucide-react';
+import { ArrowRight, Sparkles, Globe, Zap, Target, DollarSign } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const rotatingWords = [
@@ -405,9 +405,9 @@ export default function Hero() {
               style={{ gap: '1.5rem', paddingTop: '2rem', marginTop: '1.5rem' }}
             >
               {[
-                { icon: Globe, value: '4+', label: 'Global Markets' },
-                { icon: Zap, value: '10x', label: 'Avg ROAS' },
-                { icon: Target, value: '100%', label: 'Dedicated' },
+                { icon: Globe, value: '10+', label: 'Global Marketplaces' },
+                { icon: DollarSign, value: '$1M+', label: 'Ad Spend Managed' },
+                { icon: Target, value: '50+', label: 'Brands Migrated' },
               ].map((stat, index) => (
                 <div key={index} className="text-center sm:text-left">
                   <div className="flex items-center justify-center sm:justify-start" style={{ gap: '0.5rem', marginBottom: '0.375rem' }}>

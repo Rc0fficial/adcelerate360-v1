@@ -1,16 +1,40 @@
 'use client';
 
 import Marquee from 'react-fast-marquee';
-import { Wrench, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const tools = [
-  { name: 'Pacvue', color: 'from-blue-500 to-indigo-500' },
-  { name: 'Adbrew', color: 'from-purple-500 to-pink-500' },
-  { name: 'Helium 10', color: 'from-orange-500 to-red-500' },
-  { name: 'Intentwise', color: 'from-green-500 to-emerald-500' },
-  { name: 'Junglescout', color: 'from-teal-500 to-cyan-500' },
-  { name: 'Keepa', color: 'from-amber-500 to-yellow-500' },
+  {
+    name: 'Pacvue',
+    color: 'from-blue-500 to-indigo-500',
+    logo: '/logos/pacvue.png',
+  },
+  {
+    name: 'Adbrew',
+    color: 'from-purple-500 to-pink-500',
+    logo: '/logos/adbrew.png',
+  },
+  {
+    name: 'Helium 10',
+    color: 'from-orange-500 to-red-500',
+    logo: '/logos/helium10.png',
+  },
+  {
+    name: 'Intentwise',
+    color: 'from-green-500 to-emerald-500',
+    logo: '/logos/intentwise.png',
+  },
+  {
+    name: 'Jungle Scout',
+    color: 'from-teal-500 to-cyan-500',
+    logo: '/logos/junglescout.png',
+  },
+  {
+    name: 'Keepa',
+    color: 'from-amber-500 to-yellow-500',
+    logo: '/logos/keepa.png',
+  },
 ];
 
 export default function Tools() {
@@ -61,10 +85,14 @@ export default function Tools() {
                   {/* Gradient Accent */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${tool.color} rounded-t-2xl`} />
 
-                  {/* Icon */}
+                  {/* Logo */}
                   <div className="flex items-center justify-center mb-6">
-                    <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center shadow-lg group-hover:scale-110 smooth-transition`}>
-                      <Wrench className="w-10 h-10 text-white" />
+                    <div className="w-24 h-24 rounded-xl bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 smooth-transition p-4">
+                      <img
+                        src={tool.logo}
+                        alt={`${tool.name} logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
 

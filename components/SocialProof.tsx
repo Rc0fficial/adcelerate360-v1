@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Shield, Award, CheckCircle, Users, Star, Zap, BarChart3, Target } from 'lucide-react';
-import Image from 'next/image';
 
 const trustBadges = [
   {
@@ -32,12 +31,12 @@ const trustBadges = [
 ];
 
 const clientLogos = [
-  'TechGear Inc.',
-  'Wellness Naturals',
-  'Outdoor Essentials',
-  'Beauty First',
-  'Home & Living Co.',
-  'Sports Elite',
+  { name: 'TechGear Pro', logo: 'https://logo.clearbit.com/anker.com' },
+  { name: 'Wellness Naturals', logo: 'https://logo.clearbit.com/vitaminshoppe.com' },
+  { name: 'Outdoor Essentials', logo: 'https://logo.clearbit.com/rei.com' },
+  { name: 'HomeStyle Brands', logo: 'https://logo.clearbit.com/wayfair.com' },
+  { name: 'Fashion Forward', logo: 'https://logo.clearbit.com/asos.com' },
+  { name: 'Pet Paradise', logo: 'https://logo.clearbit.com/chewy.com' },
 ];
 
 const achievements = [
@@ -128,43 +127,14 @@ export default function SocialProof() {
               </div>
 
               <div className="space-y-6">
+                {/* Client Testimonial 1 */}
                 <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-amber-500/30">
-                      <Image
-                        src="/images/team/team-1.jpg"
-                        alt="Client"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-bold text-slate-100">Sarah Mitchell</h4>
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-sm text-slate-400">CEO, TechGear Inc.</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-300 text-sm leading-relaxed italic">
-                    &ldquo;Revenue increased by 180% in just 6 months. The team&apos;s expertise in Amazon PPC is unmatched. Best investment we&apos;ve made for our business.&rdquo;
-                  </p>
-                </div>
-
-                <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-cyan-500/30">
-                      <Image
-                        src="/images/team/team-2.jpg"
-                        alt="Client"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/32.jpg"
+                      alt="Michael Chen"
+                      className="w-14 h-14 rounded-full border-2 border-amber-500/30 object-cover flex-shrink-0"
+                    />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="font-bold text-slate-100">Michael Chen</h4>
@@ -172,6 +142,61 @@ export default function SocialProof() {
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                           ))}
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-400">CEO, TechGear Pro</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 text-sm leading-relaxed italic">
+                    &ldquo;Revenue increased by 180% in just 6 months. The team&apos;s expertise in Amazon PPC is unmatched. Best investment we&apos;ve made for our business.&rdquo;
+                  </p>
+                </div>
+
+                {/* Agency Testimonial 1 */}
+                <div className="bg-slate-900/60 border border-green-500/20 rounded-xl p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/89.jpg"
+                      alt="Priya Patel"
+                      className="w-14 h-14 rounded-full border-2 border-green-500/30 object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="font-bold text-slate-100">Priya Patel</h4>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-sm text-green-400 font-medium flex items-center gap-1">
+                        <Users className="w-3 h-3" />
+                        Agency Owner, Growth Partners
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 text-sm leading-relaxed italic">
+                    &ldquo;As a white-label partner, they&apos;ve allowed us to scale our agency from 5 to 40+ marketplace clients without hiring a single specialist. Game changer!&rdquo;
+                  </p>
+                </div>
+
+                {/* Client Testimonial 2 */}
+                <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/44.jpg"
+                      alt="Sarah Williams"
+                      className="w-14 h-14 rounded-full border-2 border-cyan-500/30 object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="font-bold text-slate-100">Sarah Williams</h4>
+                        <div className="flex">
+                          {[...Array(4)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          ))}
+                          <Star className="w-4 h-4 fill-amber-400 text-amber-400 opacity-50" />
+                          <span className="text-xs text-amber-400 font-semibold ml-1">4.9</span>
                         </div>
                       </div>
                       <p className="text-sm text-slate-400">Founder, Wellness Naturals</p>
@@ -182,30 +207,31 @@ export default function SocialProof() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
+                {/* Agency Testimonial 2 */}
+                <div className="bg-slate-900/60 border border-green-500/20 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-purple-500/30">
-                      <Image
-                        src="/images/team/team-3.jpg"
-                        alt="Client"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/68.jpg"
+                      alt="Jennifer Martinez"
+                      className="w-14 h-14 rounded-full border-2 border-green-500/30 object-cover flex-shrink-0"
+                    />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-bold text-slate-100">Jennifer Davis</h4>
+                        <h4 className="font-bold text-slate-100">Jennifer Martinez</h4>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                           ))}
                         </div>
                       </div>
-                      <p className="text-sm text-slate-400">Director, Outdoor Essentials</p>
+                      <p className="text-sm text-green-400 font-medium flex items-center gap-1">
+                        <Users className="w-3 h-3" />
+                        Marketing Director, HomeStyle Agency
+                      </p>
                     </div>
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed italic">
-                    &ldquo;ROAS of 12.5x! Walmart and Target now make up 35% of our revenue. The multi-platform strategy was a game-changer.&rdquo;
+                    &ldquo;The white-label team integrated seamlessly with our agency. Clients think they&apos;re our in-house experts. No training overhead, just pure results.&rdquo;
                   </p>
                 </div>
               </div>
@@ -254,16 +280,16 @@ export default function SocialProof() {
             <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
               <h3 className="text-lg font-bold text-slate-100 mb-6 text-center">Trusted By Leading Brands</h3>
               <div className="grid grid-cols-3 gap-4">
-                {clientLogos.map((logo, index) => (
+                {clientLogos.map((client, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-slate-900/60 border border-slate-700/50 rounded-lg p-4 flex items-center justify-center hover:border-amber-500/30 transition-all duration-300"
+                    className="bg-white/95 border border-slate-300/50 rounded-lg p-4 flex items-center justify-center hover:border-amber-500/50 hover:shadow-lg transition-all duration-300"
                   >
-                    <span className="text-xs font-semibold text-slate-300 text-center">{logo}</span>
+                    <img src={client.logo} alt={client.name} className="w-full h-8 object-contain" />
                   </motion.div>
                 ))}
               </div>
