@@ -104,7 +104,7 @@ export default function Tools() {
                   {/* Premium Badge */}
                   <div className="mt-4 inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-full w-full justify-center">
                     <Zap className="w-3 h-3 text-amber-400" />
-                    <span className="text-xs font-semibold text-amber-400">Premium Tool</span>
+                    <span className="text-xs font-semibold text-amber-400">Premium Subscription</span>
                   </div>
                 </div>
               </div>

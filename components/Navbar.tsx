@@ -35,12 +35,19 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             className="flex items-center"
           >
-            <Link href="/" className="text-2xl lg:text-3xl font-bold tracking-tight">
-              <span className="text-gradient">
-                Adcelerate
-              </span>
-              <span className="text-gradient-teal">
-                360
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/logos/adcelaratelogo.png"
+                alt="Adcelerate360 Logo"
+                className="h-10 lg:h-12 w-auto"
+              />
+              <span className="text-2xl lg:text-3xl font-bold tracking-tight">
+                <span className="text-gradient">
+                  Adcelerate
+                </span>
+                <span className="text-gradient-teal">
+                  360
+                </span>
               </span>
             </Link>
           </motion.div>

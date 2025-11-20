@@ -406,7 +406,7 @@ export default function Hero() {
             >
               {[
                 { icon: Globe, value: '10+', label: 'Global Marketplaces' },
-                { icon: DollarSign, value: '$1M+', label: 'Ad Spend Managed' },
+                { icon: DollarSign, value: '10M+', label: 'Ad Spend Managed' },
                 { icon: Target, value: '50+', label: 'Brands Migrated' },
               ].map((stat, index) => (
                 <div key={index} className="text-center sm:text-left">

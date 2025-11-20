@@ -2,6 +2,7 @@
 
 import { ArrowRight, Sparkles, Globe, Zap, Target, DollarSign } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import Marquee from 'react-fast-marquee';
 
 const rotatingWords = [
   'Amazon Services',
@@ -144,6 +145,44 @@ export default function Hero() {
               Transform your marketplace presence with data-driven strategies, AI-powered PPC campaigns, and expert optimization across Amazon, Walmart, Target, and beyond.
             </p>
 
+            {/* Partner Logos Marquee */}
+            <div className="w-full max-w-4xl mt-8 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+              <div className="relative">
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
+
+                <Marquee gradient={false} speed={40} pauseOnHover={true}>
+                  {[
+                    { name: 'Amazon Ads', logo: '/logos/amazon-ads.png' },
+                    { name: 'Walmart Connect', logo: '/logos/walmart-connect.png' },
+                    { name: 'Target', logo: '/logos/target-ads.png' },
+                    { name: 'Instacart Ads', logo: '/logos/instacart.png' },
+                    { name: 'Criteo', logo: '/logos/criteo.png' },
+                    { name: 'Citrus Ad', logo: '/logos/citrus-ad.png' },
+                    { name: 'Home Depot', logo: '/logos/home-depot.png' },
+                    { name: 'Kroger', logo: '/logos/kroger.png' },
+                    { name: 'Best Buy', logo: '/logos/bestbuy.png' },
+                    { name: 'eBay Ads', logo: '/logos/ebay.png' },
+                    { name: 'Wayfair', logo: '/logos/wayfair.png' },
+                    { name: 'Shopify', logo: '/logos/shopify.png' },
+                    { name: 'Noon', logo: '/logos/noon.png' },
+                    { name: 'Bol', logo: '/logos/bol.png' },
+                  ].map((partner, index) => (
+                    <div key={index} className="mx-6 flex items-center justify-center">
+                      <div className="bg-white/5 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:bg-white/10 hover:border-amber-500/30 smooth-transition">
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className="h-8 w-auto opacity-70 hover:opacity-100 smooth-transition"
+                          style={{ maxWidth: '120px' }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div
               className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
@@ -174,7 +213,7 @@ export default function Hero() {
             >
               {[
                 { icon: Globe, value: '10+', label: 'Global Marketplaces' },
-                { icon: DollarSign, value: '$1M+', label: 'Ad Spend Managed' },
+                { icon: DollarSign, value: '10M+', label: 'Ad Spend Managed' },
                 { icon: Target, value: '50+', label: 'Brands Migrated' },
               ].map((stat, index) => (
                 <div key={index} className="text-center sm:text-left">
