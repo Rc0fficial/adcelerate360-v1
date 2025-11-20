@@ -146,7 +146,7 @@ export default function Hero() {
             </p>
 
             {/* Partner Logos Marquee */}
-            <div className="w-full max-w-4xl mt-8 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+            <div className="w-full max-w-[25rem] sm:max-w-4xl mt-8 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
               <div className="relative">
                 <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
