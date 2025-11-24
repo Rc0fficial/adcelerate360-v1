@@ -87,12 +87,29 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+    <section
+      id="faq"
+      className="relative overflow-hidden"
+      style={{
+        paddingTop: "6rem",
+        paddingBottom: "6rem",
+        paddingLeft: "1.5rem",
+        paddingRight: "1.5rem",
+      }}
+    >
       {/* Decorative Gradient Orbs */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-5xl mx-auto" style={{ maxWidth: '64rem', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
+      <div
+        className="relative z-10 max-w-5xl mx-auto"
+        style={{
+          maxWidth: "64rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+        }}
+      >
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -100,23 +117,31 @@ export default function FAQ() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center"
-          style={{ marginBottom: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          style={{
+            marginBottom: "4rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 px-4 py-2 rounded-full mb-6">
             <HelpCircle className="w-4 h-4 text-amber-400" />
-            <span className="text-sm font-semibold text-amber-400">Got Questions?</span>
+            <span className="text-sm font-semibold text-amber-400">
+              Got Questions?
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="text-slate-100">Frequently Asked </span>
             <span className="text-gradient">Questions</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto text-center px-4">
-            Everything you need to know about partnering with Adcelerate360. Can&apos;t find what you&apos;re looking for? Contact us directly.
+            Everything you need to know about partnering with Adcelerate360.
+            Can&apos;t find what you&apos;re looking for? Contact us directly.
           </p>
         </motion.div>
 
         {/* FAQ Sections */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           {faqs.map((section, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -126,18 +151,27 @@ export default function FAQ() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             >
               {/* Category Header */}
-              <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{ marginBottom: "1.5rem" }}>
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/20 px-6 py-3 rounded-xl">
                   <div className="w-1.5 h-8 bg-gradient-to-b from-amber-500 to-yellow-500 rounded-full" />
-                  <h3 className="text-xl font-bold text-amber-50">{section.category}</h3>
+                  <h3 className="text-xl font-bold text-amber-50">
+                    {section.category}
+                  </h3>
                 </div>
               </div>
 
               {/* Questions */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                }}
+              >
                 {section.questions.map((faq, questionIndex) => {
                   const isActive =
-                    activeIndex?.category === categoryIndex && activeIndex?.question === questionIndex;
+                    activeIndex?.category === categoryIndex &&
+                    activeIndex?.question === questionIndex;
 
                   return (
                     <div
@@ -148,7 +182,7 @@ export default function FAQ() {
                       <button
                         onClick={() => toggleFAQ(categoryIndex, questionIndex)}
                         className="w-full text-left flex items-start justify-between gap-3 sm:gap-6 group sm:p-7"
-                        style={{ padding: '1.25rem 1rem' }}
+                        style={{ padding: "1.25rem 1rem" }}
                       >
                         <span className="text-slate-100 font-semibold text-base sm:text-lg group-hover:text-amber-400 transition-colors leading-relaxed">
                           {faq.question}
@@ -171,14 +205,16 @@ export default function FAQ() {
                         {isActive && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
+                            animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
                             <div className="px-4 sm:px-8 pb-5 sm:pb-7">
                               <div className="border-t border-slate-700/50 pt-4 sm:pt-6">
-                                <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
+                                <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                                  {faq.answer}
+                                </p>
                               </div>
                             </div>
                           </motion.div>
@@ -198,13 +234,29 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ marginTop: '4rem' }}
+          style={{ marginTop: "4rem" }}
         >
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 lg:p-10">
-            <div className="text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-100 px-4" style={{ marginBottom: '1rem' }}>Still Have Questions?</h3>
-              <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg px-4" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-                Our team is here to help. Schedule a free consultation to discuss your specific needs and get personalized answers.
+            <div
+              className="text-center"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <h3
+                className="text-2xl sm:text-3xl font-bold text-slate-100 px-4"
+                style={{ marginBottom: "1rem" }}
+              >
+                Still Have Questions?
+              </h3>
+              <p
+                className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg px-4"
+                style={{ marginBottom: "1.5rem", textAlign: "center" }}
+              >
+                Our team is here to help. Schedule a free consultation to
+                discuss your specific needs and get personalized answers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
@@ -212,16 +264,16 @@ export default function FAQ() {
                   whileTap={{ scale: 0.95 }}
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold rounded-full shadow-xl glow-gold transition-all"
-                  style={{ padding: '1rem 2rem' }}
+                  style={{ padding: "1rem 2rem" }}
                 >
                   Get in Touch
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="mailto:info@adcelerate360.com"
+                  href="mailto:hammad@adcelerate360.com"
                   className="inline-flex items-center justify-center gap-2 bg-slate-800/50 hover:bg-slate-800 backdrop-blur-sm text-slate-100 font-semibold rounded-full border-2 border-amber-500/30 hover:border-amber-500/50 transition-all"
-                  style={{ padding: '1rem 2rem' }}
+                  style={{ padding: "1rem 2rem" }}
                 >
                   Email Us Directly
                 </motion.a>

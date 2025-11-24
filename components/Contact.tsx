@@ -22,12 +22,36 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Here you would send data to your backend
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        "Failed to send message. Please try emailing us directly at hammad@adcelerate360.com"
+      );
+      console.error('Error submitting form:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -40,19 +64,19 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'Info@adcelerate360.com',
-      link: 'mailto:Info@adcelerate360.com',
+      label: "Email",
+      value: "hammad@adcelerate360.com",
+      link: "hammad@adcelerate360.com",
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+1 (737) 437-0802',
-      link: 'tel:+17374370802',
+      label: "Phone",
+      value: "+1 (737) 437-0802",
+      link: "tel:+17374370802",
     },
     {
       icon: MapPin,
-      label: 'Locations',
+      label: "Locations",
       value: 'Sheridan, WY " Islamabad, PK',
       link: null,
     },
@@ -333,15 +357,31 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
+                  {error && (
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-center">
+                      <p className="text-red-400 text-sm">{error}</p>
+                    </div>
+                  )}
+
                   <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                     type="submit"
-                    className="w-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-lg shadow-xl glow-gold transition-all flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-lg shadow-xl glow-gold transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ padding: '16px 32px', borderRadius: '9999px' }}
                   >
-                    Get Free Consultation
-                    <Send className="w-5 h-5" />
+                    {isSubmitting ? (
+                      <>
+                        <span className="animate-spin">⏳</span>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Get Free Consultation
+                        <Send className="w-5 h-5" />
+                      </>
+                    )}
                   </motion.button>
 
                   <p className="text-xs text-slate-500 text-center">

@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" style={{ background: '#0f172a', minHeight: '100%' }}>
       <head>
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -33,10 +33,17 @@ export default function RootLayout({
               -webkit-perspective: 1000;
               perspective: 1000;
             }
+            /* Ensure no white space on any browser */
+            html, body, #__next {
+              min-height: 100vh;
+              background: #0f172a;
+              margin: 0;
+              padding: 0;
+            }
           `
         }} />
       </head>
-      <body className={`${dmSans.variable} antialiased`}>
+      <body className={`${dmSans.variable} antialiased`} style={{ background: 'linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a)', minHeight: '100vh' }}>
         <Providers>
           {children}
         </Providers>

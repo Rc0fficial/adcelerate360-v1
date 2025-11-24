@@ -14,6 +14,7 @@ import Tools from '@/components/ToolsOptimized';
 import TrackRecord from '@/components/TrackRecord';
 import Testimonials from '@/components/Testimonials';
 import LeadMagnet from '@/components/LeadMagnet';
+import BookCall from '@/components/BookCall';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -43,6 +44,7 @@ export default function Home() {
         <CaseStudies />
         <Testimonials />
         <LeadMagnet />
+        <BookCall />
         <FAQ />
         <Contact />
         <Footer />

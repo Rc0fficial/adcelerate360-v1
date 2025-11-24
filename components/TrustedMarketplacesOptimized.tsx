@@ -1,20 +1,20 @@
 'use client';
 
 import Marquee from 'react-fast-marquee';
-import { ShoppingCart, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const marketplaces = [
-  { name: 'Amazon', color: 'from-orange-500 to-amber-500' },
-  { name: 'Walmart', color: 'from-blue-500 to-cyan-500' },
-  { name: 'Target', color: 'from-red-500 to-pink-500' },
-  { name: 'eBay', color: 'from-yellow-500 to-amber-500' },
-  { name: 'Etsy', color: 'from-orange-600 to-amber-600' },
-  { name: 'Shopify', color: 'from-green-500 to-emerald-500' },
-  { name: 'Google Shopping', color: 'from-blue-600 to-indigo-600' },
-  { name: 'Best Buy', color: 'from-yellow-400 to-amber-400' },
-  { name: 'Wayfair', color: 'from-purple-500 to-pink-500' },
-  { name: 'Rakuten', color: 'from-red-600 to-rose-600' },
+  { name: 'Amazon', color: 'from-orange-500 to-amber-500', logo: '/logos/amazon-ads.png' },
+  { name: 'Walmart', color: 'from-blue-500 to-cyan-500', logo: '/logos/walmart-connect.png' },
+  { name: 'Target', color: 'from-red-500 to-pink-500', logo: '/logos/target-ads.png' },
+  { name: 'eBay', color: 'from-yellow-500 to-amber-500', logo: '/logos/ebay.png' },
+  { name: 'Etsy', color: 'from-orange-600 to-amber-600', logo: '/logos/etsy.png' },
+  { name: 'Shopify', color: 'from-green-500 to-emerald-500', logo: '/logos/shopify.png' },
+  { name: 'Google Shopping', color: 'from-blue-600 to-indigo-600', logo: '/logos/google-shopping.png' },
+  { name: 'Best Buy', color: 'from-yellow-400 to-amber-400', logo: '/logos/bestbuy.png' },
+  { name: 'Wayfair', color: 'from-purple-500 to-pink-500', logo: '/logos/wayfair.png' },
+  { name: 'Rakuten', color: 'from-red-600 to-rose-600', logo: '/logos/rakuten.png' },
 ];
 
 export default function TrustedMarketplaces() {
@@ -65,10 +65,14 @@ export default function TrustedMarketplaces() {
                   {/* Gradient Accent */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${marketplace.color} rounded-t-2xl`} />
 
-                  {/* Icon */}
+                  {/* Logo */}
                   <div className="flex items-center justify-center mb-6">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${marketplace.color} flex items-center justify-center shadow-lg group-hover:scale-110 smooth-transition`}>
-                      <ShoppingCart className="w-8 h-8 text-white" />
+                    <div className="w-20 h-20 rounded-xl bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 smooth-transition p-3">
+                      <img
+                        src={marketplace.logo}
+                        alt={`${marketplace.name} logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
 
