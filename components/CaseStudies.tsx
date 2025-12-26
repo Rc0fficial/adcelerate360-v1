@@ -35,7 +35,7 @@ const caseStudies = [
     company: 'TechGear Pro',
     industry: 'Consumer Electronics',
     platform: 'Amazon US',
-    logo: 'https://logo.clearbit.com/anker.com',
+    logo: '/logos/techgear-pro.svg',
     challenge: 'Struggling with 35% ACOS and plateaued monthly sales at $45K despite aggressive advertising spend. Losing market share to competitors.',
     solution: 'Implemented AI-powered bid optimization, restructured product catalog with enhanced A+ content, launched strategic Sponsored Brand campaigns, and optimized for high-intent keywords.',
     results: [
@@ -47,18 +47,18 @@ const caseStudies = [
     client: {
       name: 'Michael Chen',
       role: 'CEO, TechGear Pro',
-      image: 'https://randomuser.me/api/portraits/men/32.jpg',
+      image: '/images/profiles/michael-chen.jpg',
     },
     gradient: 'from-amber-500 to-yellow-500',
     chartData: techGearSalesData,
     chartType: 'line',
-    dashboardImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+    dashboardImage: '/images/dashboards/analytics-1.jpg',
   },
   {
     company: 'Wellness Naturals',
     industry: 'Health & Beauty',
     platform: 'Amazon EU (5 Countries)',
-    logo: 'https://logo.clearbit.com/vitaminshoppe.com',
+    logo: '/logos/wellness-naturals.svg',
     challenge: 'Multiple failed attempts at EU expansion due to complex compliance requirements, language barriers, and lack of localized marketing strategy.',
     solution: 'Comprehensive EU compliance audit, multilingual SEO optimization across 5 markets, localized A+ content creation, region-specific PPC campaigns, and automated inventory management.',
     results: [
@@ -70,18 +70,18 @@ const caseStudies = [
     client: {
       name: 'Sarah Williams',
       role: 'Founder, Wellness Naturals',
-      image: 'https://randomuser.me/api/portraits/women/44.jpg',
+      image: '/images/profiles/sarah-williams.jpg',
     },
     gradient: 'from-cyan-500 to-teal-500',
     chartData: wellnessMarketData,
     chartType: 'bar',
-    dashboardImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    dashboardImage: '/images/dashboards/analytics-2.jpg',
   },
   {
     company: 'Outdoor Essentials',
     industry: 'Sports & Outdoors',
     platform: 'Amazon, Walmart & Target',
-    logo: 'https://logo.clearbit.com/rei.com',
+    logo: '/logos/outdoor-essentials.svg',
     challenge: 'Over-reliance on Amazon (100% of marketplace revenue) with zero presence on Walmart and Target. Vulnerable to platform policy changes and seasonal fluctuations.',
     solution: 'Multi-platform expansion strategy, optimized product listings for Walmart and Target algorithms, synchronized inventory management, platform-specific promotional calendars.',
     results: [
@@ -93,12 +93,12 @@ const caseStudies = [
     client: {
       name: 'David Rodriguez',
       role: 'VP of E-commerce, Outdoor Essentials',
-      image: 'https://randomuser.me/api/portraits/men/67.jpg',
+      image: '/images/profiles/david-rodriguez.jpg',
     },
     gradient: 'from-purple-500 to-pink-500',
     chartData: outdoorPlatformData,
     chartType: 'pie',
-    dashboardImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    dashboardImage: '/images/dashboards/analytics-2.jpg',
   },
 ];
 

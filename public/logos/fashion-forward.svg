@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fashionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#be185d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Diamond shape -->
+  <path d="M60 15 L95 60 L60 105 L25 60 Z" fill="url(#fashionGradient)"/>
+  <!-- Stylized F shape -->
+  <path d="M50 45 L70 45 L70 50 L55 50 L55 57 L67 57 L67 62 L55 62 L55 75 L50 75 Z" fill="white" opacity="0.9"/>
+  <!-- Decorative elements -->
+  <circle cx="72" cy="70" r="3" fill="white" opacity="0.7"/>
+  <circle cx="65" cy="77" r="2" fill="white" opacity="0.7"/>
+</svg>

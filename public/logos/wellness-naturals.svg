@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wellnessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Circular background -->
+  <circle cx="60" cy="60" r="45" fill="url(#wellnessGradient)"/>
+  <!-- Leaf design -->
+  <path d="M60 35 Q75 45 75 60 Q75 75 60 85 Q60 70 60 60 Q60 50 60 35 Z" fill="white" opacity="0.9"/>
+  <path d="M60 35 Q45 45 45 60 Q45 75 60 85 Q60 70 60 60 Q60 50 60 35 Z" fill="white" opacity="0.7"/>
+  <!-- Center dot -->
+  <circle cx="60" cy="60" r="5" fill="white"/>
+</svg>

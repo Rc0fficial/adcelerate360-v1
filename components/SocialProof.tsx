@@ -31,12 +31,12 @@ const trustBadges = [
 ];
 
 const clientLogos = [
-  { name: 'TechGear Pro', logo: 'https://logo.clearbit.com/anker.com' },
-  { name: 'Wellness Naturals', logo: 'https://logo.clearbit.com/vitaminshoppe.com' },
-  { name: 'Outdoor Essentials', logo: 'https://logo.clearbit.com/rei.com' },
-  { name: 'HomeStyle Brands', logo: 'https://logo.clearbit.com/wayfair.com' },
-  { name: 'Fashion Forward', logo: 'https://logo.clearbit.com/asos.com' },
-  { name: 'Pet Paradise', logo: 'https://logo.clearbit.com/chewy.com' },
+  { name: 'Amazon', logo: '/logos/amazon-ads.png' },
+  { name: 'Walmart', logo: '/logos/walmart-connect.png' },
+  { name: 'Target', logo: '/logos/target-ads.png' },
+  { name: 'Wayfair', logo: '/logos/wayfair.png' },
+  { name: 'eBay', logo: '/logos/ebay.png' },
+  { name: 'Etsy', logo: '/logos/etsy.png' },
 ];
 
 const achievements = [
@@ -131,7 +131,7 @@ export default function SocialProof() {
                 <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
-                      src="https://randomuser.me/api/portraits/men/32.jpg"
+                      src="/images/profiles/michael-chen.jpg"
                       alt="Michael Chen"
                       className="w-14 h-14 rounded-full border-2 border-amber-500/30 object-cover flex-shrink-0"
                     />
@@ -156,7 +156,7 @@ export default function SocialProof() {
                 <div className="bg-slate-900/60 border border-green-500/20 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
-                      src="https://randomuser.me/api/portraits/women/89.jpg"
+                      src="/images/profiles/priya-patel.jpg"
                       alt="Priya Patel"
                       className="w-14 h-14 rounded-full border-2 border-green-500/30 object-cover flex-shrink-0"
                     />
@@ -184,7 +184,7 @@ export default function SocialProof() {
                 <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
-                      src="https://randomuser.me/api/portraits/women/44.jpg"
+                      src="/images/profiles/sarah-williams.jpg"
                       alt="Sarah Williams"
                       className="w-14 h-14 rounded-full border-2 border-cyan-500/30 object-cover flex-shrink-0"
                     />
@@ -211,7 +211,7 @@ export default function SocialProof() {
                 <div className="bg-slate-900/60 border border-green-500/20 rounded-xl p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
-                      src="https://randomuser.me/api/portraits/women/68.jpg"
+                      src="/images/profiles/jennifer-martinez.jpg"
                       alt="Jennifer Martinez"
                       className="w-14 h-14 rounded-full border-2 border-green-500/30 object-cover flex-shrink-0"
                     />

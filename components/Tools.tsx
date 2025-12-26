@@ -8,32 +8,32 @@ const tools = [
   {
     name: 'Pacvue',
     color: 'from-blue-500 to-indigo-500',
-    logo: 'https://cdn.worldvectorlogo.com/logos/pacvue.svg',
+    logo: '/logos/pacvue.png',
   },
   {
     name: 'Adbrew',
     color: 'from-purple-500 to-pink-500',
-    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/gajt4wpqqwvuy7gag19f',
+    logo: '/logos/adbrew.png',
   },
   {
     name: 'Helium 10',
     color: 'from-orange-500 to-red-500',
-    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1502321443/yvurzmqnhpejwmjxiyvr.png',
+    logo: '/logos/helium10.png',
   },
   {
     name: 'Intentwise',
     color: 'from-green-500 to-emerald-500',
-    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/fgw9bx5h0yl68rjbqfrv',
+    logo: '/logos/intentwise.png',
   },
   {
     name: 'Jungle Scout',
     color: 'from-teal-500 to-cyan-500',
-    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1502321443/bj9lplsnuzlqrirfqwgx.png',
+    logo: '/logos/junglescout.png',
   },
   {
     name: 'Keepa',
     color: 'from-amber-500 to-yellow-500',
-    logo: 'https://keepa.com/favicon.ico',
+    logo: '/logos/keepa.png',
   },
 ];
 

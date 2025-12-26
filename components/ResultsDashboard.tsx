@@ -131,7 +131,7 @@ export default function ResultsDashboard() {
             <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden p-4 sm:p-6 hover:border-green-500/40 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
               <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-4 sm:mb-6 bg-slate-950">
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+                  src="/images/dashboards/analytics-2.jpg"
                   alt="Amazon Dashboard Analytics"
                   className="w-full h-full object-cover opacity-60"
                 />

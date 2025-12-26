@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Hexagon background -->
+  <path d="M60 10 L95 30 L95 70 L60 90 L25 70 L25 30 Z" fill="url(#techGradient)"/>
+  <!-- Circuit pattern -->
+  <circle cx="45" cy="45" r="4" fill="white" opacity="0.9"/>
+  <circle cx="75" cy="45" r="4" fill="white" opacity="0.9"/>
+  <circle cx="60" cy="60" r="4" fill="white" opacity="0.9"/>
+  <line x1="45" y1="45" x2="60" y2="60" stroke="white" stroke-width="2" opacity="0.8"/>
+  <line x1="75" y1="45" x2="60" y2="60" stroke="white" stroke-width="2" opacity="0.8"/>
+  <circle cx="60" cy="60" r="8" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+</svg>

@@ -109,7 +109,7 @@ export default function About() {
               {/* Professional Business Person Image */}
               <div className="relative w-full h-96 sm:h-[500px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop"
+                  src="/images/about-team.jpg"
                   alt="Professional E-Commerce Consultant"
                   fill
                   className="object-cover object-center"

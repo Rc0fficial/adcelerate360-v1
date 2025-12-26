@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="petGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect x="15" y="15" width="90" height="90" rx="20" fill="url(#petGradient)"/>
+  <!-- Paw print -->
+  <ellipse cx="60" cy="65" rx="15" ry="18" fill="white" opacity="0.9"/>
+  <ellipse cx="45" cy="50" rx="8" ry="10" fill="white" opacity="0.85"/>
+  <ellipse cx="60" cy="45" rx="8" ry="10" fill="white" opacity="0.85"/>
+  <ellipse cx="75" cy="50" rx="8" ry="10" fill="white" opacity="0.85"/>
+</svg>
