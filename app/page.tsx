@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/HeroOptimized';
 import Services from '@/components/Services';
 import About from '@/components/About';
+import FounderShowcase from '@/components/FounderShowcase';
+import FounderCredibility from '@/components/FounderCredibility';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
 import SocialProof from '@/components/SocialProof';
@@ -34,6 +36,7 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <About />
+        <FounderShowcase />
         <Services />
         <Process />
         <ResultsDashboard />
@@ -46,6 +49,7 @@ export default function Home() {
         <LeadMagnet />
         <BookCall />
         <FAQ />
+        <FounderCredibility />
         <Contact />
         <Footer />
       </div>

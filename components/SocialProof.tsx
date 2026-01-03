@@ -287,9 +287,13 @@ export default function SocialProof() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white/95 border border-slate-300/50 rounded-lg p-4 flex items-center justify-center hover:border-amber-500/50 hover:shadow-lg transition-all duration-300"
+                    className="bg-slate-900/60 border border-slate-700/50 rounded-lg p-4 flex items-center justify-center hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300 group"
                   >
-                    <img src={client.logo} alt={client.name} className="w-full h-8 object-contain" />
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="w-full h-8 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                    />
                   </motion.div>
                 ))}
               </div>

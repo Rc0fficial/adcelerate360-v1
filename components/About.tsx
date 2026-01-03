@@ -109,10 +109,11 @@ export default function About() {
               {/* Professional Business Person Image */}
               <div className="relative w-full h-96 sm:h-[500px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="/images/about-team.jpg"
+                  src="/images/team/Founder1.jpeg"
                   alt="Professional E-Commerce Consultant"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover"
+                  style={{ objectPosition: 'center 15%' }}
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
