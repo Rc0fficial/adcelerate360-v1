@@ -110,11 +110,12 @@ export default function About() {
               <div className="relative w-full h-96 sm:h-[500px] rounded-2xl overflow-hidden mb-6">
                 <Image
                   src="/images/team/Founder4.jpeg"
-                  alt="Professional E-Commerce Consultant"
+                  alt="Adcelerate360 e-commerce expert team providing Amazon PPC, Walmart advertising, and marketplace optimization services for global brands"
                   fill
                   className="object-cover"
                   style={{ objectPosition: 'center top' }}
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 

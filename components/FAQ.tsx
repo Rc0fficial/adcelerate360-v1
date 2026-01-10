@@ -86,8 +86,31 @@ export default function FAQ() {
     }
   };
 
+  // Generate FAQ Schema for SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.flatMap((section) =>
+      section.questions.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    )
+  };
+
   return (
-    <section
+    <>
+      {/* FAQ Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <section
       id="faq"
       className="relative overflow-hidden"
       style={{
@@ -283,5 +306,6 @@ export default function FAQ() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

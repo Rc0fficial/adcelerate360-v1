@@ -1,0 +1,16 @@
+# Robots.txt for Adcelerate360
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Block specific paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.adcelerate360.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1
