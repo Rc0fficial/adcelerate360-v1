@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     site: '@adcelerate360',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'ZMGKlWK-R02_oyfRuqDS5GbbV3YIsthjCkjfmHMpXPo',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
