@@ -170,9 +170,7 @@ export default function Footer() {
                     Locations
                   </div>
                   <p className="text-slate-200 text-base">
-                    Sheridan, Wyoming, USA
-                    <br />
-                    Islamabad, Pakistan
+                    30 N GOULD ST STE R SHERIDAN, WY 82801
                   </p>
                 </div>
               </li>
